@@ -94,7 +94,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BackgroundGradient.jpg" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\PhotoSharingStyles.css" />
     <Content Include="getFileBytes.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
