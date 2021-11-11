@@ -11,6 +11,7 @@ using PhotoSharingApplication.Models;
 
 namespace PhotoSharingApplication.Controllers
 {
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : Controller
     {
@@ -24,7 +25,7 @@ namespace PhotoSharingApplication.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _PhotoGallery (int number = 0)
+        public ActionResult _PhotoGallery(int number = 0)
         {
             List<Photo> photos;
             if (number == 0)
@@ -44,7 +45,7 @@ namespace PhotoSharingApplication.Controllers
         }
 
 
-        public ActionResult Display (int id)
+        public ActionResult Display(int id)
         {
             Photo photo = context.Photos.Find(id);
 
@@ -106,7 +107,7 @@ namespace PhotoSharingApplication.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeleteConfirmed (int id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Photo photo = context.Photos.Find(id);
             context.Photos.Remove(photo);
@@ -127,10 +128,12 @@ namespace PhotoSharingApplication.Controllers
             {
                 return null;
             }
-
-
         }
 
+        public ActionResult SlideShow()
+        {
+            throw new NotImplementedException("The SlideShow action is not yet ready");
+        }
 
 
 
